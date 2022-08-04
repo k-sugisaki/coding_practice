@@ -1,0 +1,18 @@
+//基本的なスタイルを定義します
+@use '../global/variables' as var;
+
+body {
+  font-size: 62.5%; //1emを10pxにする
+  font-family: var.$font-base;
+  font-weight: 500;
+  color: var.$color-base;
+}
+
+a {
+  text-decoration: none;
+}
+
+//poppins
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap');
+//Heebo
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@800&display=swap');
