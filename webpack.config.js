@@ -5,7 +5,7 @@ const StylelintPlugin = require("stylelint-webpack-plugin");
 module.exports = {
   mode: "production",
   devtool: "source-map",
-  entry: "./src/my-main.js",
+  entry: "./src/sky_coffee.js",
   output: {
     path: PATH.resolve(__dirname, "dist"),
     filename: "my-bundle.js",
