@@ -1,6 +1,6 @@
-@use '../global/index' as g;
-@use './works-card';
-
+@use "../global/index" as g;
+@use "menu";
+@use "blog-content";
 
 .pcnone {
   @include g.mq {
@@ -8,46 +8,110 @@
   }
 }
 
-.sec-title {
-  font-size: 2.4em;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-
-
-/* ============================
-   contact
-   ============================ */
-
-.hero-image {
-  margin: 0 calc(50% - 50vw);
-  padding-top: 49%;
-  width: 100vw;
+.visual {
+  padding-top: 41%;
+  width: 100%;
   @include g.bg_image;
-  background-image: url(../img/heroImage_sp.png);
-  border-radius: 18px;
+  background-image: url(../img/cafe_pc_main-visual.jpg);
   overflow: hidden;
 }
 
-.contact {
-  &__inner {
-    padding: 0 10.6vw;
+.main {
+  margin: auto;
+  max-width: 1110px;
+}
 
-    & > div {
-      margin-top: 2em;
+.section__subtitle {
+  font-size: 1.6em;
+}
+.section__title {
+  font-size: 3.2em;
+  font-weight: 400;
+  color: g.$color-sky;
+}
+
+/* ============================
+   concept
+   ============================ */
+
+.concept {
+  margin: 90px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.concept__imagearea {
+  width: 50%;
+}
+.concept__image {
+  padding-top: 100%;
+  width: 100%;
+  @include g.bg_image;
+  background-image: url(../img/cafe_concept.jpg);
+  overflow: hidden;
+}
+
+.concept__textarea {
+  padding: 0 40px;
+
+  .section__title {
+    margin: 18px 0 33px;
+  }
+}
+
+.concept-text__detail {
+  font-size: 1.6em;
+  line-height: 1.8;
+}
+
+/* ============================
+   blog
+   ============================ */
+
+.blog {
+  .section__title {
+    margin-bottom: 7px;
+    text-align: center;
+  }
+
+  .section__subtitle {
+    text-align: center;
+  }
+}
+
+.blog-more__btn {
+  position: relative;
+  margin: 30px auto 50px;
+  width: 220px;
+  height: 50px;
+  border: 1px solid g.$color-sky;
+
+  &::after {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    @include g.font_icon;
+    content: "\f0da";
+    color: g.$color-sky;
+  }
+
+  &:hover {
+    &::after {
+      color: g.$color-white;
+    }
+
+    .blog-more__link {
+      background-color: g.$color-sky;
+      color: g.$color-white;
     }
   }
 }
 
-.contact-detail {
-  &__inner {
-    & > * + * {
-      margin-top: 2em;
-    }
-  }
-}
-
-.contact-description {
-  font-size: 1.2em;
+.blog-more__link {
+  width: 100%;
+  display: block;
+  color: g.$color-sky;
+  font-size: 1.4em;
+  line-height: 50px;
+  text-align: center;
 }

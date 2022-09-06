@@ -1,1 +1,11 @@
 @use '../global/index' as g;
+
+.header {
+  padding: 50px 0;
+  max-height: 156px;
+  
+  &__logo {
+    font-size: 5.6em;
+    text-align: center;
+  }
+}
