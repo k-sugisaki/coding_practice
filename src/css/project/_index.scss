@@ -14,6 +14,16 @@
   @include g.bg_image;
   background-image: url(../img/cafe_pc_main-visual.jpg);
   overflow: hidden;
+  @include g.mq(medium, max, true) {
+    margin: auto;
+    padding-top: 69%;
+    background-image: url(../img/cafe_sp_main-visual.jpg);
+    max-width: 500px;
+  } 
+  @include g.mq(small, max, true) {
+    padding-top: 90%;
+    max-width: 100%;    
+  }
 }
 
 .main {
@@ -23,11 +33,17 @@
 
 .section__subtitle {
   font-size: 1.6em;
+  @include g.mq(small, max, true) {
+    font-size: 1.5em;
+  }
 }
 .section__title {
   font-size: 3.2em;
   font-weight: 400;
   color: g.$color-sky;
+  @include g.mq(small, max, true) {
+    font-size: 2.6em;
+  }
 }
 
 /* ============================
@@ -39,29 +55,57 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @include g.mq(medium, max, true) {
+    margin: 2em auto;
+    flex-direction: column;
+    max-width: 500px;
+  }
+  @include g.mq(small, max, true) {
+    padding: 0 20px;
+    max-width: 100%;
+  }
 }
 .concept__imagearea {
   width: 50%;
+  @include g.mq(medium, max, true) {
+    width: 100%;
+  }
 }
 .concept__image {
+  margin: auto;
   padding-top: 100%;
   width: 100%;
   @include g.bg_image;
   background-image: url(../img/cafe_concept.jpg);
   overflow: hidden;
+  @include g.mq(small, max, true) {
+    padding-top: 100%;
+    max-width: 100%;    
+  }
 }
 
 .concept__textarea {
   padding: 0 40px;
 
+  @include g.mq(medium, max, true) {
+    padding: 3em 0 7.5em;
+    width: calc(100% - 40px);
+  }
+
   .section__title {
     margin: 18px 0 33px;
+    @include g.mq(medium, max, true) {
+      margin: 0.37em auto 0.61em;
+    }
   }
 }
 
 .concept-text__detail {
   font-size: 1.6em;
   line-height: 1.8;
+  @include g.mq(medium, max, true) {
+    font-size: 1.5em;
+  }
 }
 
 /* ============================
@@ -85,6 +129,10 @@
   width: 220px;
   height: 50px;
   border: 1px solid g.$color-sky;
+
+  @include g.mq(small, max, true) {
+    width: calc(100% - 60px);
+  }
 
   &::after {
     position: absolute;

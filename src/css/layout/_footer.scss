@@ -6,9 +6,17 @@
   color: g.$color-white;
   text-align: center;
 
+  @include g.mq(small, max, true) {
+    padding: 6.2vw 0 1.8vw;
+  }
+
   &__logo {
     font-size: 3.6em;
     margin-bottom: 50px;
+    @include g.mq(small, max, true) {
+      margin-bottom: 9.2vw;
+      font-size: 2em;
+    }
   }
   &__copy {
     color: g.$color-gray;

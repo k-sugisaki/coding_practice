@@ -3,9 +3,17 @@
 .header {
   padding: 50px 0;
   max-height: 156px;
+
+  @include g.mq(small, max, true) {
+    padding: 12.5vw 0;
+  }
   
   &__logo {
     font-size: 5.6em;
     text-align: center;
+
+    @include g.mq(small, max, true) {
+      font-size: 3.2em;
+    }
   }
 }
