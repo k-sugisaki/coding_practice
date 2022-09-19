@@ -1,9 +1,6 @@
-@use '../global/index' as g;
-@use './service-card';
-@use './works-card';
-@use './member-photoarea';
-@use './form';
-
+@use "../global/index" as g;
+@use "menu";
+@use "blog-content";
 
 .pcnone {
   @include g.mq {
@@ -11,171 +8,158 @@
   }
 }
 
-/* main */
-.main {
+.visual {
+  padding-top: 41%;
   width: 100%;
-
-  & > * + * {
-    margin-top: 10em;
-  }
-
-  & > *:last-child {
-    margin-bottom: 10em;
-  }
-}
-
-.sec-title {
-  font-size: 2.4em;
-  font-weight: 500;
-  line-height: 1.5;
-
-  &--member {
-    @extend .sec-title;
-    font-size: 3.6em;
-    font-weight: normal;
-  }
-}
-
-.sec-lead {
-  font-size: 1.2em;
-
-  &--hero {
-    color: g.$color-blue;
-  }
-
-  &--member {
-    color: g.$color-red;
-    font-size: 1.8em;
-  }
-}
-
-
-
-/* ============================
-   contact
-   ============================ */
-
-.hero-image {
-  margin: 0 calc(50% - 50vw);
-  padding-top: 49%;
-  width: 100vw;
   @include g.bg_image;
-  background-image: url(../img/heroImage_sp.png);
-  border-radius: 18px;
+  background-image: url(../img/cafe_pc_main-visual.jpg);
   overflow: hidden;
-}
-
-.contact {
-  &__inner {
-    padding: 0 10.6vw;
-
-    & > div {
-      margin-top: 2em;
-    }
+  @include g.mq(medium, max, true) {
+    margin: auto;
+    padding-top: 69%;
+    background-image: url(../img/cafe_sp_main-visual.jpg);
+    max-width: 500px;
+  } 
+  @include g.mq(small, max, true) {
+    padding-top: 90%;
+    max-width: 100%;    
   }
 }
 
-.contact-detail {
-  &__inner {
-    & > * + * {
-      margin-top: 2em;
-    }
-  }
+.main {
+  margin: auto;
+  max-width: 1110px;
 }
 
-.contact-description {
-  font-size: 1.2em;
+.section__subtitle {
+  font-size: 1.6em;
+  @include g.mq(small, max, true) {
+    font-size: 1.5em;
+  }
+}
+.section__title {
+  font-size: 3.2em;
+  font-weight: 400;
+  color: g.$color-sky;
+  @include g.mq(small, max, true) {
+    font-size: 2.6em;
+  }
 }
 
 /* ============================
-   service
+   concept
    ============================ */
 
-.sec-title {
-  &--service {
-    @extend .sec-title;
-    @extend .contact__inner;
-  }
-}
-
-.service__wrap {
+.concept {
+  margin: 90px auto;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include g.mq(medium, max, true) {
+    margin: 2em auto;
+    flex-direction: column;
+    max-width: 500px;
+  }
+  @include g.mq(small, max, true) {
+    padding: 0 20px;
+    max-width: 100%;
+  }
 }
-
-/* ============================
-   works
-   ============================ */
-
-.works__inner {
-  padding: 0 10.6vw;
+.concept__imagearea {
+  width: 50%;
+  @include g.mq(medium, max, true) {
+    width: 100%;
+  }
 }
-
-.works__wrap {
-  margin: 13% 3.2vw;
-
-  & > * + * {
-    margin-top: 2em;
+.concept__image {
+  margin: auto;
+  padding-top: 100%;
+  width: 100%;
+  @include g.bg_image;
+  background-image: url(../img/cafe_concept.jpg);
+  overflow: hidden;
+  @include g.mq(small, max, true) {
+    padding-top: 100%;
+    max-width: 100%;    
   }
 }
 
-.works-more {
-  display: block;
-  color: g.$color-blue;
-  font-size: 1.8em;
+.concept__textarea {
+  padding: 0 40px;
+
+  @include g.mq(medium, max, true) {
+    padding: 3em 0 7.5em;
+    width: calc(100% - 40px);
+  }
+
+  .section__title {
+    margin: 18px 0 33px;
+    @include g.mq(medium, max, true) {
+      margin: 0.37em auto 0.61em;
+    }
+  }
+}
+
+.concept-text__detail {
+  font-size: 1.6em;
+  line-height: 1.8;
+  @include g.mq(medium, max, true) {
+    font-size: 1.5em;
+  }
+}
+
+/* ============================
+   blog
+   ============================ */
+
+.blog {
+  .section__title {
+    margin-bottom: 7px;
+    text-align: center;
+  }
+
+  .section__subtitle {
+    text-align: center;
+  }
+}
+
+.blog-more__btn {
+  position: relative;
+  margin: 30px auto 50px;
+  width: 220px;
+  height: 50px;
+  border: 1px solid g.$color-sky;
+
+  @include g.mq(small, max, true) {
+    width: calc(100% - 60px);
+  }
 
   &::after {
-    margin-left: 1em;
+    position: absolute;
+    top: 20px;
+    right: 15px;
     @include g.font_icon;
-    content: '\f061';
-    font-size: .8em;
+    content: "\f0da";
+    color: g.$color-sky;
+  }
+
+  &:hover {
+    &::after {
+      color: g.$color-white;
+    }
+
+    .blog-more__link {
+      background-color: g.$color-sky;
+      color: g.$color-white;
+    }
   }
 }
 
-/* ============================
-   member
-   ============================ */
-
-.member__inner {
-  margin: 13% 3.2vw;
+.blog-more__link {
+  width: 100%;
+  display: block;
+  color: g.$color-sky;
+  font-size: 1.4em;
+  line-height: 50px;
+  text-align: center;
 }
-
-.member-detail {
-  font-size: 1.6em;
-  color: g.$color-gray5;
-}
-
-/* ============================
-   comment
-   ============================ */
-
-   .comment__inner {
-     padding: 0 3.2vw;
-   }
-
-   .comment-text {
-     margin-bottom: 7vw;
-     font-size: 2.4em;
-   }
-
-   .comment-profile {
-     display: flex;
-     justify-content: flex-start;
-     align-items: center;
-
-     &__photo {
-       margin-right: 7vw;
-       display: block;
-       max-width: 82px;
-       border-radius: 12px;
-     }
-
-     &__name {
-       font-size: 2.4em;
-     }
-
-     &__position {
-       font-size: 1.8em;
-       color: g.$color-gray3;
-     }
-   }

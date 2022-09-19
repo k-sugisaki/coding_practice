@@ -1,15 +1,83 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>webpack Test</title>
-  <link rel="stylesheet" href="dist/css/style.css">
-</head>
-<body>
-  <div id="main">
-    <p>テスト</p>
-  </div>
-  <script src="dist/my-bundle.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sky Coffee</title>
+    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./dist/css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__logo">Sky Coffee</h1>
+    </header>
+    <div class="visual"></div>
+    <div class="main">
+      <div class="menu">
+        <ul class="menu__list">
+          <li class="menu__item"><a class="menu__link" href="#">menu</a></li>
+          <li class="menu__item"><a class="menu__link" href="#blog">blog</a></li>
+          <li class="menu__item"><a class="menu__link" href="#access">access</a></li>
+        </ul>
+      </div>
+      <section class="concept">
+        <div class="concept__imagearea">
+          <div class="concept__image"></div>
+        </div>
+        <div class="concept__textarea">
+          <p class="section__subtitle">Concept</p>
+          <h2 class="section__title">心静かにコーヒーを</h2>
+          <p class="concept-text__detail">
+            立ち止まって、<br>
+            空の青さを眺めて、<br>
+            一息つきましょう
+          </p>
+        </div>
+      </section>
+      <section class="blog" id="blog">
+        <h2 class="section__title">blog</h2>
+        <p class="section__subtitle">ブログ</p>
+        <div class="blog-content__wrap">
+          <div class="blog-content">
+            <div class="blog-content__img--01" alt="コーヒーカーの画像"></div>
+            <div class="blog-content__text">コーヒーカー始めました。</div>
+            <div class="blog-content__date">2030.08.08</div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-content__img--02" alt="濃厚クリーミーなミルクの写真"></div>
+            <div class="blog-content__text">濃厚クリーミーなミルクをどうぞ</div>
+            <div class="blog-content__date">2030.08.05</div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-content__img--03" alt="Sky Coffeeのオリジナル曲を再生するようす"></div>
+            <div class="blog-content__text">Sky Coffeeのオリジナル曲が完成！無料ダウンロード可能です。</div>
+            <div class="blog-content__date">2030.08.03</div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-content__img--04" alt="ハイキングをイメージした山の写真"></div>
+            <div class="blog-content__text">ハイキング用のコーヒーを販売中です。</div>
+            <div class="blog-content__date">2030.07.28</div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-content__img--05" alt="ショップの壁の一部の写真"></div>
+            <div class="blog-content__text">ショップの壁を塗ってみました。</div>
+            <div class="blog-content__date">2030.07.27</div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-content__img--06" alt="ブログのTOP画像"></div>
+            <div class="blog-content__text">ブログをはじめました。</div>
+            <div class="blog-content__date">2030.07.26</div>
+          </div>
+        </div>
+        <div class="blog-more__btn">
+          <a class="blog-more__link">ブログ一覧</a>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="footer__logo">Sky Coffee</div>
+      <div class="footer__copy">Sky Coffee</div>
+    </footer>
+    <script src="dist/my-bundle.js"></script>
+  </body>
 </html>

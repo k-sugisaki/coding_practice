@@ -1,0 +1,60 @@
+@use "../global/index" as g;
+
+.blog-content__wrap {
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  @include g.mq(medium, max, true) {
+    justify-content: space-around;
+  }
+  @include g.mq(small, max, true) {
+    flex-direction: column;
+    & > .blog-content + .blog-content {
+      margin-top: .8em;
+    }
+  }
+}
+
+.blog-content {
+  margin-bottom: 54px;
+  width: 33.3%;
+  max-width: 350px;
+
+  @include g.mq(medium, max, true) {
+    min-width: 350px;
+  }
+
+  @include g.mq(small, max, true) {
+    margin: auto;
+    width: 100%;
+    min-width: auto;
+  }
+
+  & > div + div {
+    margin-top: 8px;
+    @include g.mq(medium, max, true) {
+      margin: 0.5em 0;
+    }
+  }
+
+  $num: "01", "02", "03", "04", "05", "06";
+
+  @each $x in $num {
+    &__img--#{$x} {
+      padding-top: 51.4%;
+      @include g.bg_image;
+      background-image: url("../img/cafe_thumbnail#{$x}.jpg");
+    }
+  }
+
+  &__text {
+    font-size: 1.5em;
+    line-height: 1.5;
+  }
+
+  &__date {
+    font-size: 1.2em;
+  }
+}

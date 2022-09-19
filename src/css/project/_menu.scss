@@ -1,0 +1,25 @@
+@use '../global/index' as g;
+
+.menu {
+  margin: 40px auto;
+}
+
+.menu__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > .menu__item + .menu__item {
+    margin-left: 80px;
+  }
+}
+
+.menu__link {
+  width: 100%;
+  color: g.$color-base;
+  font-size: 1.8em;
+
+  &:hover {
+    color: g.$color-sky;
+  }
+}
